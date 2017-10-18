@@ -6,6 +6,6 @@ public class Object {
     private String name;
     private Long quantity;
     private String description;
-    private Incident incident;
+    private Double price;
 
 }
