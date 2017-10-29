@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="user")
-public class User implements Serializable {
+public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -23,6 +23,9 @@ public class User implements Serializable {
 
     @Column(name = "email")
     private String email;
+
+    @Column(name="authToken")
+    private String authToken;
 
     public Long getId() {
         return id;
@@ -62,5 +65,13 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAuthToken() {
+        return authToken;
+    }
+
+    public void setAuthToken(String authToken) {
+        this.authToken = authToken;
     }
 }

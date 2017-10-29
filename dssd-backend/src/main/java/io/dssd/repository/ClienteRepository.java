@@ -1,5 +1,6 @@
 package io.dssd.repository;
 
+import io.dssd.model.Cliente;
 import io.dssd.model.Usuario;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,12 +13,12 @@ import javax.persistence.PersistenceContext;
  */
 @Repository
 @Transactional
-public class UserRepository extends AbstractRepository<Usuario> {
+public class ClienteRepository extends AbstractRepository<Cliente> {
 
-    public Usuario getById(Long userId) {
-        return (Usuario) entityManager
-            .createQuery("from User where id = :id")
-            .setParameter("id", userId)
+    public Cliente getById(Long clienteId) {
+        return (Cliente) entityManager
+            .createQuery("from Cliente where id = :id")
+            .setParameter("id", clienteId)
             .getSingleResult();
     }
 

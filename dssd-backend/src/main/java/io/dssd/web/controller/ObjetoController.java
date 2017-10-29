@@ -1,7 +1,9 @@
 package io.dssd.web.controller;
 
-import io.dssd.model.Usuario;
-import io.dssd.service.UserService;
+import io.dssd.model.Incidente;
+import io.dssd.model.Objeto;
+import io.dssd.service.IncidenteService;
+import io.dssd.service.ObjetoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,27 +15,27 @@ import org.springframework.web.util.UriComponentsBuilder;
  * Created by federico on 11/10/17.
  */
 @Controller
-@RequestMapping("user")
-public class UserController {
+@RequestMapping("objeto")
+public class ObjetoController {
 
     @Autowired
-    private UserService userService;
+    private ObjetoService service;
 
     @GetMapping("{id}")
-    public ResponseEntity<Usuario> getUserById(
+    public ResponseEntity<Objeto> getById(
         @PathVariable("id") Long id
     ) {
-        Usuario user = userService.getUserById(id);
-        return new ResponseEntity<>(user, HttpStatus.OK);
+        Objeto objeto = service.getById(id);
+        return new ResponseEntity<>(objeto, HttpStatus.OK);
     }
 
     @PostMapping("")
-    public ResponseEntity<Usuario> createUser(
-        @RequestBody Usuario user,
+    public ResponseEntity<Objeto> create(
+        @RequestBody Objeto objeto,
         UriComponentsBuilder builder
     ) {
-        user = userService.save(user);
-        return new ResponseEntity<>(user, HttpStatus.OK);
+        objeto = service.save(objeto);
+        return new ResponseEntity<>(objeto, HttpStatus.OK);
     }
 
 }
