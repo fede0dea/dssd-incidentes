@@ -24,7 +24,7 @@ public class UserRepository {
 
     public Usuario getById(Long userId) {
         return (Usuario) entityManager
-            .createQuery("from User where id = :id")
+            .createQuery("from Usuario where id = :id")
             .setParameter("id", userId)
             .getSingleResult();
     }
