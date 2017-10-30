@@ -12,7 +12,15 @@ import javax.persistence.PersistenceContext;
  */
 @Repository
 @Transactional
-public class UserRepository extends AbstractRepository<Usuario> {
+public class UserRepository {
+
+    @PersistenceContext
+    protected EntityManager entityManager;
+
+    public Usuario save(Usuario usuario) {
+        entityManager.persist(usuario);
+        return usuario;
+    }
 
     public Usuario getById(Long userId) {
         return (Usuario) entityManager

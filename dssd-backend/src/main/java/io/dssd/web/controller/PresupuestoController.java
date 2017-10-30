@@ -15,7 +15,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  * Created by federico on 11/10/17.
  */
 @Controller
-@RequestMapping("objeto")
+@RequestMapping("presupuesto")
 public class PresupuestoController {
 
     @Autowired

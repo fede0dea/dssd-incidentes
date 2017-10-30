@@ -18,7 +18,7 @@ public class Fotografia {
     private String uri;
 
     @ManyToOne
-    @Column(name="expediente_id")
+    @JoinColumn(name="expediente_id")
     private Expediente expediente;
 
     public Long getId() {

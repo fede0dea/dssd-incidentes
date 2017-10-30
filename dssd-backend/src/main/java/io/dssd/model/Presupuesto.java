@@ -1,5 +1,7 @@
 package io.dssd.model;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -12,15 +14,12 @@ public class Presupuesto {
     @Column(name="presupuesto_id")
     private Long id;
 
-    @ManyToOne
-    @Column(name="expediente_id")
-    private Expediente expediente;
-
     @OneToMany
     @JoinColumn(name="objeto_id")
     private List<Objeto> objetos;
 
-    @Column(name="proveedor_id")
+    @ManyToOne
+    @JoinColumn(name="proveedor_id")
     private Proveedor proveedor;
 
     @Column(name="precio")
@@ -32,14 +31,6 @@ public class Presupuesto {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Expediente getExpediente() {
-        return expediente;
-    }
-
-    public void setExpediente(Expediente expediente) {
-        this.expediente = expediente;
     }
 
     public List<Objeto> getObjetos() {

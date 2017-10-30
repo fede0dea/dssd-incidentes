@@ -17,11 +17,11 @@ public class Expediente {
     private String externalId;
 
     @ManyToOne
-    @Column(name="incidente_id")
+    @JoinColumn(name="incidente_id")
     private Incidente incidente;
 
     @ManyToOne
-    @Column(name="presupuesto_id")
+    @JoinColumn(name="presupuesto_id")
     private Presupuesto presupuesto;
 
     @OneToMany
@@ -29,7 +29,7 @@ public class Expediente {
     private List<Fotografia> fotografias;
 
     @ManyToOne
-    @Column(name="empleado_id")
+    @JoinColumn(name="empleado_id")
     private Usuario empleado;
 
     @Column(name="autorizado")

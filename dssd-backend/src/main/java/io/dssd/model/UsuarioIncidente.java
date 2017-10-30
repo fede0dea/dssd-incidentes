@@ -12,10 +12,12 @@ public class UsuarioIncidente {
     @Column(name="usuario_incidente_id")
     private Long id;
 
-    @Column(name="usuario_id")
+    @ManyToOne
+    @JoinColumn(name="usuario_id")
     private Usuario usuario;
 
-    @Column(name="incidente_id")
+    @ManyToOne
+    @JoinColumn(name="incidente_id")
     private Incidente incidente;
 
     @Column(name="creado_en")

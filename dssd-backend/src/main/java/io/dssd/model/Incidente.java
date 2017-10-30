@@ -19,7 +19,7 @@ public class Incidente {
     private IncidenteTipo tipo;
 
     @ManyToOne
-    @Column(name="cliente_id")
+    @JoinColumn(name="cliente_id")
     private Cliente cliente;
 
     @OneToMany
