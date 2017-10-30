@@ -21,7 +21,7 @@ public class Cliente {
     private String apellido;
 
     @ManyToOne
-    @JoinColumn(name="user_id")
+    @JoinColumn(name="usuario_id")
     private Usuario usuario;
 
     public Long getId() {

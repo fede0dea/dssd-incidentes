@@ -4,12 +4,12 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="user")
+@Table(name="usuario")
 public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name="user_id")
+    @Column(name="usuario_id")
     private Long id;
 
     @Column(name = "name")
