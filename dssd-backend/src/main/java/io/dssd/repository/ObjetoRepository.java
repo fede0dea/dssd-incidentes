@@ -18,5 +18,10 @@ public class ObjetoRepository extends AbstractRepository<Objeto> {
             .setParameter("id", objetoId)
             .getSingleResult();
     }
+    
+   public Objeto save(Objeto entity) {
+        entityManager.persist(entity);
+        return entity;
+    }
 
 }
