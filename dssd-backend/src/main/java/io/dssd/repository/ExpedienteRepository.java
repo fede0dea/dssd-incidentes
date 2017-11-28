@@ -21,5 +21,9 @@ public class ExpedienteRepository extends AbstractRepository<Expediente> {
             .setParameter("id", expedienteId)
             .getSingleResult();
     }
-
+    
+    public Expediente save(Expediente entity) {
+        entityManager.persist(entity);
+        return entity;
+    }
 }
