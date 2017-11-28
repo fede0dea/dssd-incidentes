@@ -3,7 +3,7 @@ package io.dssd.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="user")
+@Table(name="cliente")
 public class Cliente {
 
     @Id
