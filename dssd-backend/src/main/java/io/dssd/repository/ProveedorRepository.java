@@ -19,4 +19,8 @@ public class ProveedorRepository extends AbstractRepository<Proveedor> {
             .getSingleResult();
     }
 
+    public Proveedor save(Proveedor entity) {
+        entityManager.persist(entity);
+        return entity;
+    }
 }
