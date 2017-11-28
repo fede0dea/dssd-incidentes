@@ -13,7 +13,10 @@ import javax.persistence.PersistenceContext;
  */
 @Repository
 @Transactional
-public class ClienteRepository extends AbstractRepository<Cliente> {
+public class ClienteRepository {
+    
+	@PersistenceContext
+    protected EntityManager entityManager;
 
     public Cliente getById(Long clienteId) {
         return (Cliente) entityManager
