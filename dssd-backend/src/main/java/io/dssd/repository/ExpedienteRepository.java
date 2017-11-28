@@ -13,8 +13,11 @@ import javax.persistence.PersistenceContext;
  */
 @Repository
 @Transactional
-public class ExpedienteRepository extends AbstractRepository<Expediente> {
-
+public class ExpedienteRepository {
+    
+	@PersistenceContext
+    protected EntityManager entityManager;
+    
     public Expediente getById(Long expedienteId) {
         return (Expediente) entityManager
             .createQuery("from Expediente where id = :id")
