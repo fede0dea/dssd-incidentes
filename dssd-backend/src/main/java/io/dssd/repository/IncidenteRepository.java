@@ -18,5 +18,10 @@ public class IncidenteRepository extends AbstractRepository<Incidente> {
             .setParameter("id", incidenteId)
             .getSingleResult();
     }
+    
+    public Incidente save(Expediente entity) {
+        entityManager.persist(entity);
+        return entity;
+    }
 
 }
