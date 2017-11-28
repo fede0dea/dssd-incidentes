@@ -21,5 +21,9 @@ public class ClienteRepository extends AbstractRepository<Cliente> {
             .setParameter("id", clienteId)
             .getSingleResult();
     }
-
+    
+    public Cliente save(Cliente entity) {
+        entityManager.persist(entity);
+        return entity;
+    }
 }
