@@ -19,4 +19,9 @@ public class PresupuestoRepository extends AbstractRepository<Presupuesto> {
             .getSingleResult();
     }
 
+   public Presupuesto save(Presupuesto entity) {
+        entityManager.persist(entity);
+        return entity;
+    }
+    
 }
