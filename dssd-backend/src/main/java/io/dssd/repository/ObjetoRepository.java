@@ -10,7 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository
 @Transactional
-public class ObjetoRepository extends AbstractRepository<Objeto> {
+public class ObjetoRepository {
+        
+	@PersistenceContext
+    protected EntityManager entityManager;
 
     public Objeto getById(Long objetoId) {
         return (Objeto) entityManager
